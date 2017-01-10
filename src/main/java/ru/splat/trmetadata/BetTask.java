@@ -1,26 +1,20 @@
 package ru.splat.trmetadata;
 
+import ru.splat.trenums.TaskTypesEnum;
+
 /**
  * Created by Дмитрий on 22.12.2016.
  */
 public class BetTask extends LocalTask {
-    private BetStatesEnum betState;
-    private Long punterId;
+    private final BetStatesEnum betState;
+    private final Long punterId;
 
     public Long getPunterId() {
         return punterId;
     }
 
-    public void setPunterId(Long punterId) {
-        this.punterId = punterId;
-    }
-
     public BetStatesEnum getBetState() {
         return betState;
-    }
-
-    public void setBetState(BetStatesEnum betState) {
-        this.betState = betState;
     }
 
     public BetTask(String service, Long transactionId, TaskTypesEnum type, BetStatesEnum betState, Long punterId) {

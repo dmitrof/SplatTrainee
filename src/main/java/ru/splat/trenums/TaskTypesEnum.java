@@ -1,4 +1,4 @@
-package ru.splat.trmetadata;
+package ru.splat.trenums;
 
 /**
  * Created by Дмитрий on 22.12.2016.
