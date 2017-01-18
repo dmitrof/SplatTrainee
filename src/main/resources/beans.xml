@@ -28,6 +28,11 @@
 
     <bean id="ActorsStarter" class="ru.splat.actors.ActorsStarterImpl" >
         <property name="tmStarter" ref="TMStarter"/>
+        <property name="tmConsumer" ref="TMConsumer"/>
+    </bean>
+
+    <bean id="TMConsumer" class="ru.splat.tmkafka.TMConsumerImpl">
+
     </bean>
 
 

@@ -9,8 +9,10 @@ import ru.splat.trmetadata.*;
 import java.util.List;
 
 /**
- * Created by Дмитрий on 19.01.2017.
+ * Created by Дмитрий on 17.01.2017.
  */
+//класс для формирования сообщений
+    //TO-DO: необходимо протестировать возможность добавления пустых полей
 public  class ProtobufBuilder {
     public ProtobufBuilder() {
     }

@@ -2,6 +2,7 @@ package ru.splat.tm;
 
 import akka.actor.ActorRef;
 import akka.actor.UntypedActor;
+import com.google.protobuf.Message;
 import ru.splat.conventions.LocalStatesEnum;
 import ru.splat.conventions.TaskTypesEnum;
 import ru.splat.trmetadata.TransactionMetadata;
@@ -41,13 +42,17 @@ public class TMFinalizerImpl extends UntypedActor implements TMFinalizer {
         else {
             System.out.println("State for " + trId + " already exists!");
         }
-
-
     }
 
     public void onReceive(Object message) throws Exception {
         if (message instanceof TransactionMetadata) {
             createTransactionState((TransactionMetadata)message);
+        }
+        if (message instanceof Message) {
+            
+        }
+        else {
+            unhandled(message);
         }
         //if (message instanceof )
     }
