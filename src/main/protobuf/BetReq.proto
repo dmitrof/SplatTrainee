@@ -5,8 +5,8 @@ option java_outer_classname="BetReqProto";
 
 message BetReq {
     required int64 transaction_id = 1;
-    required int64 local_task = 2;
-    required string services = 3;
+    required string local_task = 2;
+    repeated string services = 3;
     optional int64 punter_id = 4;
     optional string bet_state = 5;
 }

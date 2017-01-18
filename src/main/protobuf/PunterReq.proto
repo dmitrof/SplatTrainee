@@ -5,7 +5,7 @@ option java_outer_classname="PunterReqProto";
 
 message PunterReq {
     required int64 transaction_id = 1;
-    required int64 local_task = 2;
+    required string local_task = 2;
     repeated string services = 3;
     optional int64 punter_id = 4;
 }

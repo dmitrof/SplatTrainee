@@ -21,15 +21,20 @@ public final class BillingReqProto {
      */
     long getTransactionId();
 
-    // required int64 local_task = 2;
+    // required string local_task = 2;
     /**
-     * <code>required int64 local_task = 2;</code>
+     * <code>required string local_task = 2;</code>
      */
     boolean hasLocalTask();
     /**
-     * <code>required int64 local_task = 2;</code>
+     * <code>required string local_task = 2;</code>
      */
-    long getLocalTask();
+    java.lang.String getLocalTask();
+    /**
+     * <code>required string local_task = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getLocalTaskBytes();
 
     // repeated string services = 3;
     /**
@@ -127,9 +132,9 @@ public final class BillingReqProto {
               transactionId_ = input.readInt64();
               break;
             }
-            case 16: {
+            case 18: {
               bitField0_ |= 0x00000002;
-              localTask_ = input.readInt64();
+              localTask_ = input.readBytes();
               break;
             }
             case 26: {
@@ -209,20 +214,47 @@ public final class BillingReqProto {
       return transactionId_;
     }
 
-    // required int64 local_task = 2;
+    // required string local_task = 2;
     public static final int LOCAL_TASK_FIELD_NUMBER = 2;
-    private long localTask_;
+    private java.lang.Object localTask_;
     /**
-     * <code>required int64 local_task = 2;</code>
+     * <code>required string local_task = 2;</code>
      */
     public boolean hasLocalTask() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required int64 local_task = 2;</code>
+     * <code>required string local_task = 2;</code>
      */
-    public long getLocalTask() {
-      return localTask_;
+    public java.lang.String getLocalTask() {
+      java.lang.Object ref = localTask_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          localTask_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string local_task = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLocalTaskBytes() {
+      java.lang.Object ref = localTask_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        localTask_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     // repeated string services = 3;
@@ -289,7 +321,7 @@ public final class BillingReqProto {
 
     private void initFields() {
       transactionId_ = 0L;
-      localTask_ = 0L;
+      localTask_ = "";
       services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       punterId_ = 0L;
       sum_ = 0;
@@ -318,7 +350,7 @@ public final class BillingReqProto {
         output.writeInt64(1, transactionId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, localTask_);
+        output.writeBytes(2, getLocalTaskBytes());
       }
       for (int i = 0; i < services_.size(); i++) {
         output.writeBytes(3, services_.getByteString(i));
@@ -344,7 +376,7 @@ public final class BillingReqProto {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, localTask_);
+          .computeBytesSize(2, getLocalTaskBytes());
       }
       {
         int dataSize = 0;
@@ -481,7 +513,7 @@ public final class BillingReqProto {
         super.clear();
         transactionId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
-        localTask_ = 0L;
+        localTask_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
         services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -559,7 +591,9 @@ public final class BillingReqProto {
           setTransactionId(other.getTransactionId());
         }
         if (other.hasLocalTask()) {
-          setLocalTask(other.getLocalTask());
+          bitField0_ |= 0x00000002;
+          localTask_ = other.localTask_;
+          onChanged();
         }
         if (!other.services_.isEmpty()) {
           if (services_.isEmpty()) {
@@ -645,35 +679,76 @@ public final class BillingReqProto {
         return this;
       }
 
-      // required int64 local_task = 2;
-      private long localTask_ ;
+      // required string local_task = 2;
+      private java.lang.Object localTask_ = "";
       /**
-       * <code>required int64 local_task = 2;</code>
+       * <code>required string local_task = 2;</code>
        */
       public boolean hasLocalTask() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required int64 local_task = 2;</code>
+       * <code>required string local_task = 2;</code>
        */
-      public long getLocalTask() {
-        return localTask_;
+      public java.lang.String getLocalTask() {
+        java.lang.Object ref = localTask_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          localTask_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>required int64 local_task = 2;</code>
+       * <code>required string local_task = 2;</code>
        */
-      public Builder setLocalTask(long value) {
-        bitField0_ |= 0x00000002;
+      public com.google.protobuf.ByteString
+          getLocalTaskBytes() {
+        java.lang.Object ref = localTask_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          localTask_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string local_task = 2;</code>
+       */
+      public Builder setLocalTask(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         localTask_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int64 local_task = 2;</code>
+       * <code>required string local_task = 2;</code>
        */
       public Builder clearLocalTask() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        localTask_ = 0L;
+        localTask_ = getDefaultInstance().getLocalTask();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string local_task = 2;</code>
+       */
+      public Builder setLocalTaskBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        localTask_ = value;
         onChanged();
         return this;
       }
@@ -864,7 +939,7 @@ public final class BillingReqProto {
     java.lang.String[] descriptorData = {
       "\n\020BillingReq.proto\022\010ru.splat\"j\n\nBillingR" +
       "eq\022\026\n\016transaction_id\030\001 \002(\003\022\022\n\nlocal_task" +
-      "\030\002 \002(\003\022\020\n\010services\030\003 \003(\t\022\021\n\tpunter_id\030\004 " +
+      "\030\002 \002(\t\022\020\n\010services\030\003 \003(\t\022\021\n\tpunter_id\030\004 " +
       "\001(\003\022\013\n\003sum\030\005 \001(\005B$\n\021ru.splat.protobufB\017B" +
       "illingReqProto"
     };

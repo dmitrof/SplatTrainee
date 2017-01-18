@@ -5,8 +5,9 @@ option java_outer_classname="EventReqProto";
 
 message EventReq {
     required int64 transaction_id = 1;
-    required int64 local_task = 2;
-    required string services = 3;
+    required string local_task = 2;
+    repeated string services = 3;
     repeated int64 event_id = 4;
     repeated int64 selection_id = 5;
+    optional int64 punter_id = 6;
 }

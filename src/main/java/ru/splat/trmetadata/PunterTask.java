@@ -1,15 +1,15 @@
 package ru.splat.trmetadata;
 
-import ru.splat.trenums.TaskTypesEnum;
+import ru.splat.conventions.TaskTypesEnum;
 
 /**
  * Created by Дмитрий on 17.12.2016.
  */
 public class PunterTask extends LocalTask {
     private final Long punterId;
-
-    public PunterTask(String service, Long transactionId, TaskTypesEnum type, Long _punterId) {
-        super(service, transactionId, type);
+    private final String service = "PunterService"; //это поле должно указывать на топик, с которого читает нужный сервис
+    public PunterTask(TaskTypesEnum type, Long _punterId) {
+        super(type);
         this.punterId = _punterId;
     }
 

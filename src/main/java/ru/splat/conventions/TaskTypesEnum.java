@@ -1,8 +1,9 @@
-package ru.splat.trenums;
+package ru.splat.conventions;
 
 /**
  * Created by Дмитрий on 22.12.2016.
  */
+//виды локалтасков
 public enum TaskTypesEnum {
     RESERVE, WITHDRAW, CANCEL_RESERVE,
     CHECK_PUNTER_LIMITS, UPDATE_PUNTER_COUNTER, CANCEL_PUNTER_LIMITS, CANCEL_PUNTER_COUNTER,

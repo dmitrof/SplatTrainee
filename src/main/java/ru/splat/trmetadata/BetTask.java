@@ -1,6 +1,7 @@
 package ru.splat.trmetadata;
 
-import ru.splat.trenums.TaskTypesEnum;
+import ru.splat.conventions.BetStatesEnum;
+import ru.splat.conventions.TaskTypesEnum;
 
 /**
  * Created by Дмитрий on 22.12.2016.
@@ -8,6 +9,7 @@ import ru.splat.trenums.TaskTypesEnum;
 public class BetTask extends LocalTask {
     private final BetStatesEnum betState;
     private final Long punterId;
+    private final String service = "BetService"; //это поле должно указывать на топик, с которого читает нужный сервис
 
     public Long getPunterId() {
         return punterId;
@@ -17,8 +19,8 @@ public class BetTask extends LocalTask {
         return betState;
     }
 
-    public BetTask(String service, Long transactionId, TaskTypesEnum type, BetStatesEnum betState, Long punterId) {
-        super(service, transactionId, type);
+    public BetTask(TaskTypesEnum type, BetStatesEnum betState, Long punterId) {
+        super(type);
         this.betState = betState;
         this.punterId = punterId;
     }

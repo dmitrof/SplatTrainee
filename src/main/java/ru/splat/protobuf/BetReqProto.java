@@ -21,30 +21,40 @@ public final class BetReqProto {
      */
     long getTransactionId();
 
-    // required int64 local_task = 2;
+    // required string local_task = 2;
     /**
-     * <code>required int64 local_task = 2;</code>
+     * <code>required string local_task = 2;</code>
      */
     boolean hasLocalTask();
     /**
-     * <code>required int64 local_task = 2;</code>
+     * <code>required string local_task = 2;</code>
      */
-    long getLocalTask();
-
-    // required string services = 3;
+    java.lang.String getLocalTask();
     /**
-     * <code>required string services = 3;</code>
-     */
-    boolean hasServices();
-    /**
-     * <code>required string services = 3;</code>
-     */
-    java.lang.String getServices();
-    /**
-     * <code>required string services = 3;</code>
+     * <code>required string local_task = 2;</code>
      */
     com.google.protobuf.ByteString
-        getServicesBytes();
+        getLocalTaskBytes();
+
+    // repeated string services = 3;
+    /**
+     * <code>repeated string services = 3;</code>
+     */
+    java.util.List<java.lang.String>
+    getServicesList();
+    /**
+     * <code>repeated string services = 3;</code>
+     */
+    int getServicesCount();
+    /**
+     * <code>repeated string services = 3;</code>
+     */
+    java.lang.String getServices(int index);
+    /**
+     * <code>repeated string services = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getServicesBytes(int index);
 
     // optional int64 punter_id = 4;
     /**
@@ -127,23 +137,26 @@ public final class BetReqProto {
               transactionId_ = input.readInt64();
               break;
             }
-            case 16: {
+            case 18: {
               bitField0_ |= 0x00000002;
-              localTask_ = input.readInt64();
+              localTask_ = input.readBytes();
               break;
             }
             case 26: {
-              bitField0_ |= 0x00000004;
-              services_ = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                services_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              services_.add(input.readBytes());
               break;
             }
             case 32: {
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000004;
               punterId_ = input.readInt64();
               break;
             }
             case 42: {
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000008;
               betState_ = input.readBytes();
               break;
             }
@@ -155,6 +168,9 @@ public final class BetReqProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          services_ = new com.google.protobuf.UnmodifiableLazyStringList(services_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -203,36 +219,20 @@ public final class BetReqProto {
       return transactionId_;
     }
 
-    // required int64 local_task = 2;
+    // required string local_task = 2;
     public static final int LOCAL_TASK_FIELD_NUMBER = 2;
-    private long localTask_;
+    private java.lang.Object localTask_;
     /**
-     * <code>required int64 local_task = 2;</code>
+     * <code>required string local_task = 2;</code>
      */
     public boolean hasLocalTask() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required int64 local_task = 2;</code>
+     * <code>required string local_task = 2;</code>
      */
-    public long getLocalTask() {
-      return localTask_;
-    }
-
-    // required string services = 3;
-    public static final int SERVICES_FIELD_NUMBER = 3;
-    private java.lang.Object services_;
-    /**
-     * <code>required string services = 3;</code>
-     */
-    public boolean hasServices() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>required string services = 3;</code>
-     */
-    public java.lang.String getServices() {
-      java.lang.Object ref = services_;
+    public java.lang.String getLocalTask() {
+      java.lang.Object ref = localTask_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -240,26 +240,56 @@ public final class BetReqProto {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          services_ = s;
+          localTask_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>required string services = 3;</code>
+     * <code>required string local_task = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getServicesBytes() {
-      java.lang.Object ref = services_;
+        getLocalTaskBytes() {
+      java.lang.Object ref = localTask_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        services_ = b;
+        localTask_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    // repeated string services = 3;
+    public static final int SERVICES_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList services_;
+    /**
+     * <code>repeated string services = 3;</code>
+     */
+    public java.util.List<java.lang.String>
+        getServicesList() {
+      return services_;
+    }
+    /**
+     * <code>repeated string services = 3;</code>
+     */
+    public int getServicesCount() {
+      return services_.size();
+    }
+    /**
+     * <code>repeated string services = 3;</code>
+     */
+    public java.lang.String getServices(int index) {
+      return services_.get(index);
+    }
+    /**
+     * <code>repeated string services = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getServicesBytes(int index) {
+      return services_.getByteString(index);
     }
 
     // optional int64 punter_id = 4;
@@ -269,7 +299,7 @@ public final class BetReqProto {
      * <code>optional int64 punter_id = 4;</code>
      */
     public boolean hasPunterId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>optional int64 punter_id = 4;</code>
@@ -285,7 +315,7 @@ public final class BetReqProto {
      * <code>optional string bet_state = 5;</code>
      */
     public boolean hasBetState() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>optional string bet_state = 5;</code>
@@ -323,8 +353,8 @@ public final class BetReqProto {
 
     private void initFields() {
       transactionId_ = 0L;
-      localTask_ = 0L;
-      services_ = "";
+      localTask_ = "";
+      services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       punterId_ = 0L;
       betState_ = "";
     }
@@ -341,10 +371,6 @@ public final class BetReqProto {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasServices()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -356,15 +382,15 @@ public final class BetReqProto {
         output.writeInt64(1, transactionId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, localTask_);
+        output.writeBytes(2, getLocalTaskBytes());
+      }
+      for (int i = 0; i < services_.size(); i++) {
+        output.writeBytes(3, services_.getByteString(i));
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getServicesBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeInt64(4, punterId_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBytes(5, getBetStateBytes());
       }
       getUnknownFields().writeTo(output);
@@ -382,17 +408,22 @@ public final class BetReqProto {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, localTask_);
+          .computeBytesSize(2, getLocalTaskBytes());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < services_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(services_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getServicesList().size();
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getServicesBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, punterId_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(5, getBetStateBytes());
       }
@@ -514,9 +545,9 @@ public final class BetReqProto {
         super.clear();
         transactionId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
-        localTask_ = 0L;
+        localTask_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        services_ = "";
+        services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
         punterId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -558,16 +589,18 @@ public final class BetReqProto {
           to_bitField0_ |= 0x00000002;
         }
         result.localTask_ = localTask_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          services_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              services_);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.services_ = services_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
+          to_bitField0_ |= 0x00000004;
         }
         result.punterId_ = punterId_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
+          to_bitField0_ |= 0x00000008;
         }
         result.betState_ = betState_;
         result.bitField0_ = to_bitField0_;
@@ -590,11 +623,18 @@ public final class BetReqProto {
           setTransactionId(other.getTransactionId());
         }
         if (other.hasLocalTask()) {
-          setLocalTask(other.getLocalTask());
+          bitField0_ |= 0x00000002;
+          localTask_ = other.localTask_;
+          onChanged();
         }
-        if (other.hasServices()) {
-          bitField0_ |= 0x00000004;
-          services_ = other.services_;
+        if (!other.services_.isEmpty()) {
+          if (services_.isEmpty()) {
+            services_ = other.services_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureServicesIsMutable();
+            services_.addAll(other.services_);
+          }
           onChanged();
         }
         if (other.hasPunterId()) {
@@ -615,10 +655,6 @@ public final class BetReqProto {
           return false;
         }
         if (!hasLocalTask()) {
-          
-          return false;
-        }
-        if (!hasServices()) {
           
           return false;
         }
@@ -677,109 +713,169 @@ public final class BetReqProto {
         return this;
       }
 
-      // required int64 local_task = 2;
-      private long localTask_ ;
+      // required string local_task = 2;
+      private java.lang.Object localTask_ = "";
       /**
-       * <code>required int64 local_task = 2;</code>
+       * <code>required string local_task = 2;</code>
        */
       public boolean hasLocalTask() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required int64 local_task = 2;</code>
+       * <code>required string local_task = 2;</code>
        */
-      public long getLocalTask() {
-        return localTask_;
-      }
-      /**
-       * <code>required int64 local_task = 2;</code>
-       */
-      public Builder setLocalTask(long value) {
-        bitField0_ |= 0x00000002;
-        localTask_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 local_task = 2;</code>
-       */
-      public Builder clearLocalTask() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        localTask_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // required string services = 3;
-      private java.lang.Object services_ = "";
-      /**
-       * <code>required string services = 3;</code>
-       */
-      public boolean hasServices() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>required string services = 3;</code>
-       */
-      public java.lang.String getServices() {
-        java.lang.Object ref = services_;
+      public java.lang.String getLocalTask() {
+        java.lang.Object ref = localTask_;
         if (!(ref instanceof java.lang.String)) {
           java.lang.String s = ((com.google.protobuf.ByteString) ref)
               .toStringUtf8();
-          services_ = s;
+          localTask_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>required string services = 3;</code>
+       * <code>required string local_task = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getServicesBytes() {
-        java.lang.Object ref = services_;
+          getLocalTaskBytes() {
+        java.lang.Object ref = localTask_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          services_ = b;
+          localTask_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>required string services = 3;</code>
+       * <code>required string local_task = 2;</code>
        */
-      public Builder setServices(
+      public Builder setLocalTask(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
-        services_ = value;
+  bitField0_ |= 0x00000002;
+        localTask_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required string services = 3;</code>
+       * <code>required string local_task = 2;</code>
        */
-      public Builder clearServices() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        services_ = getDefaultInstance().getServices();
+      public Builder clearLocalTask() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        localTask_ = getDefaultInstance().getLocalTask();
         onChanged();
         return this;
       }
       /**
-       * <code>required string services = 3;</code>
+       * <code>required string local_task = 2;</code>
        */
-      public Builder setServicesBytes(
+      public Builder setLocalTaskBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
-        services_ = value;
+  bitField0_ |= 0x00000002;
+        localTask_ = value;
+        onChanged();
+        return this;
+      }
+
+      // repeated string services = 3;
+      private com.google.protobuf.LazyStringList services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureServicesIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          services_ = new com.google.protobuf.LazyStringArrayList(services_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <code>repeated string services = 3;</code>
+       */
+      public java.util.List<java.lang.String>
+          getServicesList() {
+        return java.util.Collections.unmodifiableList(services_);
+      }
+      /**
+       * <code>repeated string services = 3;</code>
+       */
+      public int getServicesCount() {
+        return services_.size();
+      }
+      /**
+       * <code>repeated string services = 3;</code>
+       */
+      public java.lang.String getServices(int index) {
+        return services_.get(index);
+      }
+      /**
+       * <code>repeated string services = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getServicesBytes(int index) {
+        return services_.getByteString(index);
+      }
+      /**
+       * <code>repeated string services = 3;</code>
+       */
+      public Builder setServices(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureServicesIsMutable();
+        services_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string services = 3;</code>
+       */
+      public Builder addServices(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureServicesIsMutable();
+        services_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string services = 3;</code>
+       */
+      public Builder addAllServices(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureServicesIsMutable();
+        super.addAll(values, services_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string services = 3;</code>
+       */
+      public Builder clearServices() {
+        services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string services = 3;</code>
+       */
+      public Builder addServicesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureServicesIsMutable();
+        services_.add(value);
         onChanged();
         return this;
       }
@@ -917,8 +1013,8 @@ public final class BetReqProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\014BetReq.proto\022\010ru.splat\"l\n\006BetReq\022\026\n\016tr" +
-      "ansaction_id\030\001 \002(\003\022\022\n\nlocal_task\030\002 \002(\003\022\020" +
-      "\n\010services\030\003 \002(\t\022\021\n\tpunter_id\030\004 \001(\003\022\021\n\tb" +
+      "ansaction_id\030\001 \002(\003\022\022\n\nlocal_task\030\002 \002(\t\022\020" +
+      "\n\010services\030\003 \003(\t\022\021\n\tpunter_id\030\004 \001(\003\022\021\n\tb" +
       "et_state\030\005 \001(\tB \n\021ru.splat.protobufB\013Bet" +
       "ReqProto"
     };
