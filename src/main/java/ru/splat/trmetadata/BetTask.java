@@ -24,4 +24,9 @@ public class BetTask extends LocalTask {
         this.betState = betState;
         this.punterId = punterId;
     }
+
+    @Override
+    public String getService() {
+        return service;
+    }
 }

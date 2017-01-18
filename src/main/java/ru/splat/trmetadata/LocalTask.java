@@ -15,7 +15,7 @@ public abstract class LocalTask {
     public TaskTypesEnum getType() {
         return type;
     }
-
+    public abstract String getService();
 
 
 

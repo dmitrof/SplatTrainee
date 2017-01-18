@@ -36,25 +36,25 @@ public final class BillingReqProto {
     com.google.protobuf.ByteString
         getLocalTaskBytes();
 
-    // repeated string services = 3;
+    // repeated string tasks = 3;
     /**
-     * <code>repeated string services = 3;</code>
+     * <code>repeated string tasks = 3;</code>
      */
     java.util.List<java.lang.String>
-    getServicesList();
+    getTasksList();
     /**
-     * <code>repeated string services = 3;</code>
+     * <code>repeated string tasks = 3;</code>
      */
-    int getServicesCount();
+    int getTasksCount();
     /**
-     * <code>repeated string services = 3;</code>
+     * <code>repeated string tasks = 3;</code>
      */
-    java.lang.String getServices(int index);
+    java.lang.String getTasks(int index);
     /**
-     * <code>repeated string services = 3;</code>
+     * <code>repeated string tasks = 3;</code>
      */
     com.google.protobuf.ByteString
-        getServicesBytes(int index);
+        getTasksBytes(int index);
 
     // optional int64 punter_id = 4;
     /**
@@ -139,10 +139,10 @@ public final class BillingReqProto {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                services_ = new com.google.protobuf.LazyStringArrayList();
+                tasks_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000004;
               }
-              services_.add(input.readBytes());
+              tasks_.add(input.readBytes());
               break;
             }
             case 32: {
@@ -164,7 +164,7 @@ public final class BillingReqProto {
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          services_ = new com.google.protobuf.UnmodifiableLazyStringList(services_);
+          tasks_ = new com.google.protobuf.UnmodifiableLazyStringList(tasks_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -257,34 +257,34 @@ public final class BillingReqProto {
       }
     }
 
-    // repeated string services = 3;
-    public static final int SERVICES_FIELD_NUMBER = 3;
-    private com.google.protobuf.LazyStringList services_;
+    // repeated string tasks = 3;
+    public static final int TASKS_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList tasks_;
     /**
-     * <code>repeated string services = 3;</code>
+     * <code>repeated string tasks = 3;</code>
      */
     public java.util.List<java.lang.String>
-        getServicesList() {
-      return services_;
+        getTasksList() {
+      return tasks_;
     }
     /**
-     * <code>repeated string services = 3;</code>
+     * <code>repeated string tasks = 3;</code>
      */
-    public int getServicesCount() {
-      return services_.size();
+    public int getTasksCount() {
+      return tasks_.size();
     }
     /**
-     * <code>repeated string services = 3;</code>
+     * <code>repeated string tasks = 3;</code>
      */
-    public java.lang.String getServices(int index) {
-      return services_.get(index);
+    public java.lang.String getTasks(int index) {
+      return tasks_.get(index);
     }
     /**
-     * <code>repeated string services = 3;</code>
+     * <code>repeated string tasks = 3;</code>
      */
     public com.google.protobuf.ByteString
-        getServicesBytes(int index) {
-      return services_.getByteString(index);
+        getTasksBytes(int index) {
+      return tasks_.getByteString(index);
     }
 
     // optional int64 punter_id = 4;
@@ -322,7 +322,7 @@ public final class BillingReqProto {
     private void initFields() {
       transactionId_ = 0L;
       localTask_ = "";
-      services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tasks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       punterId_ = 0L;
       sum_ = 0;
     }
@@ -352,8 +352,8 @@ public final class BillingReqProto {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, getLocalTaskBytes());
       }
-      for (int i = 0; i < services_.size(); i++) {
-        output.writeBytes(3, services_.getByteString(i));
+      for (int i = 0; i < tasks_.size(); i++) {
+        output.writeBytes(3, tasks_.getByteString(i));
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt64(4, punterId_);
@@ -380,12 +380,12 @@ public final class BillingReqProto {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < services_.size(); i++) {
+        for (int i = 0; i < tasks_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(services_.getByteString(i));
+            .computeBytesSizeNoTag(tasks_.getByteString(i));
         }
         size += dataSize;
-        size += 1 * getServicesList().size();
+        size += 1 * getTasksList().size();
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
@@ -515,7 +515,7 @@ public final class BillingReqProto {
         bitField0_ = (bitField0_ & ~0x00000001);
         localTask_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        tasks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
         punterId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -558,11 +558,11 @@ public final class BillingReqProto {
         }
         result.localTask_ = localTask_;
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          services_ = new com.google.protobuf.UnmodifiableLazyStringList(
-              services_);
+          tasks_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              tasks_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
-        result.services_ = services_;
+        result.tasks_ = tasks_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000004;
         }
@@ -595,13 +595,13 @@ public final class BillingReqProto {
           localTask_ = other.localTask_;
           onChanged();
         }
-        if (!other.services_.isEmpty()) {
-          if (services_.isEmpty()) {
-            services_ = other.services_;
+        if (!other.tasks_.isEmpty()) {
+          if (tasks_.isEmpty()) {
+            tasks_ = other.tasks_;
             bitField0_ = (bitField0_ & ~0x00000004);
           } else {
-            ensureServicesIsMutable();
-            services_.addAll(other.services_);
+            ensureTasksIsMutable();
+            tasks_.addAll(other.tasks_);
           }
           onChanged();
         }
@@ -753,95 +753,95 @@ public final class BillingReqProto {
         return this;
       }
 
-      // repeated string services = 3;
-      private com.google.protobuf.LazyStringList services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureServicesIsMutable() {
+      // repeated string tasks = 3;
+      private com.google.protobuf.LazyStringList tasks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTasksIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          services_ = new com.google.protobuf.LazyStringArrayList(services_);
+          tasks_ = new com.google.protobuf.LazyStringArrayList(tasks_);
           bitField0_ |= 0x00000004;
          }
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
       public java.util.List<java.lang.String>
-          getServicesList() {
-        return java.util.Collections.unmodifiableList(services_);
+          getTasksList() {
+        return java.util.Collections.unmodifiableList(tasks_);
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
-      public int getServicesCount() {
-        return services_.size();
+      public int getTasksCount() {
+        return tasks_.size();
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
-      public java.lang.String getServices(int index) {
-        return services_.get(index);
+      public java.lang.String getTasks(int index) {
+        return tasks_.get(index);
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
       public com.google.protobuf.ByteString
-          getServicesBytes(int index) {
-        return services_.getByteString(index);
+          getTasksBytes(int index) {
+        return tasks_.getByteString(index);
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
-      public Builder setServices(
+      public Builder setTasks(
           int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureServicesIsMutable();
-        services_.set(index, value);
+  ensureTasksIsMutable();
+        tasks_.set(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
-      public Builder addServices(
+      public Builder addTasks(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureServicesIsMutable();
-        services_.add(value);
+  ensureTasksIsMutable();
+        tasks_.add(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
-      public Builder addAllServices(
+      public Builder addAllTasks(
           java.lang.Iterable<java.lang.String> values) {
-        ensureServicesIsMutable();
-        super.addAll(values, services_);
+        ensureTasksIsMutable();
+        super.addAll(values, tasks_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
-      public Builder clearServices() {
-        services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      public Builder clearTasks() {
+        tasks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
-      public Builder addServicesBytes(
+      public Builder addTasksBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureServicesIsMutable();
-        services_.add(value);
+  ensureTasksIsMutable();
+        tasks_.add(value);
         onChanged();
         return this;
       }
@@ -937,11 +937,11 @@ public final class BillingReqProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020BillingReq.proto\022\010ru.splat\"j\n\nBillingR" +
+      "\n\020BillingReq.proto\022\010ru.splat\"g\n\nBillingR" +
       "eq\022\026\n\016transaction_id\030\001 \002(\003\022\022\n\nlocal_task" +
-      "\030\002 \002(\t\022\020\n\010services\030\003 \003(\t\022\021\n\tpunter_id\030\004 " +
-      "\001(\003\022\013\n\003sum\030\005 \001(\005B$\n\021ru.splat.protobufB\017B" +
-      "illingReqProto"
+      "\030\002 \002(\t\022\r\n\005tasks\030\003 \003(\t\022\021\n\tpunter_id\030\004 \001(\003" +
+      "\022\013\n\003sum\030\005 \001(\005B$\n\021ru.splat.protobufB\017Bill" +
+      "ingReqProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -953,7 +953,7 @@ public final class BillingReqProto {
           internal_static_ru_splat_BillingReq_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ru_splat_BillingReq_descriptor,
-              new java.lang.String[] { "TransactionId", "LocalTask", "Services", "PunterId", "Sum", });
+              new java.lang.String[] { "TransactionId", "LocalTask", "Tasks", "PunterId", "Sum", });
           return null;
         }
       };

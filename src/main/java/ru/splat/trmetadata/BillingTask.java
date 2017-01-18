@@ -19,6 +19,11 @@ public class BillingTask extends LocalTask {
         return sum;
     }
 
+    @Override
+    public String getService() {
+        return service;
+    }
+
     public Long getPunterId() {
         return punterId;
     }

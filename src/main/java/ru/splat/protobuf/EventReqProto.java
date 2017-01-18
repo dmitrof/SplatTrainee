@@ -36,53 +36,53 @@ public final class EventReqProto {
     com.google.protobuf.ByteString
         getLocalTaskBytes();
 
-    // repeated string services = 3;
+    // repeated string tasks = 3;
     /**
-     * <code>repeated string services = 3;</code>
+     * <code>repeated string tasks = 3;</code>
      */
     java.util.List<java.lang.String>
-    getServicesList();
+    getTasksList();
     /**
-     * <code>repeated string services = 3;</code>
+     * <code>repeated string tasks = 3;</code>
      */
-    int getServicesCount();
+    int getTasksCount();
     /**
-     * <code>repeated string services = 3;</code>
+     * <code>repeated string tasks = 3;</code>
      */
-    java.lang.String getServices(int index);
+    java.lang.String getTasks(int index);
     /**
-     * <code>repeated string services = 3;</code>
+     * <code>repeated string tasks = 3;</code>
      */
     com.google.protobuf.ByteString
-        getServicesBytes(int index);
+        getTasksBytes(int index);
 
-    // repeated int64 event_id = 4;
+    // repeated int64 events = 4;
     /**
-     * <code>repeated int64 event_id = 4;</code>
+     * <code>repeated int64 events = 4;</code>
      */
-    java.util.List<java.lang.Long> getEventIdList();
+    java.util.List<java.lang.Long> getEventsList();
     /**
-     * <code>repeated int64 event_id = 4;</code>
+     * <code>repeated int64 events = 4;</code>
      */
-    int getEventIdCount();
+    int getEventsCount();
     /**
-     * <code>repeated int64 event_id = 4;</code>
+     * <code>repeated int64 events = 4;</code>
      */
-    long getEventId(int index);
+    long getEvents(int index);
 
-    // repeated int64 selection_id = 5;
+    // repeated int64 selections = 5;
     /**
-     * <code>repeated int64 selection_id = 5;</code>
+     * <code>repeated int64 selections = 5;</code>
      */
-    java.util.List<java.lang.Long> getSelectionIdList();
+    java.util.List<java.lang.Long> getSelectionsList();
     /**
-     * <code>repeated int64 selection_id = 5;</code>
+     * <code>repeated int64 selections = 5;</code>
      */
-    int getSelectionIdCount();
+    int getSelectionsCount();
     /**
-     * <code>repeated int64 selection_id = 5;</code>
+     * <code>repeated int64 selections = 5;</code>
      */
-    long getSelectionId(int index);
+    long getSelections(int index);
 
     // optional int64 punter_id = 6;
     /**
@@ -157,50 +157,50 @@ public final class EventReqProto {
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                services_ = new com.google.protobuf.LazyStringArrayList();
+                tasks_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000004;
               }
-              services_.add(input.readBytes());
+              tasks_.add(input.readBytes());
               break;
             }
             case 32: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                eventId_ = new java.util.ArrayList<java.lang.Long>();
+                events_ = new java.util.ArrayList<java.lang.Long>();
                 mutable_bitField0_ |= 0x00000008;
               }
-              eventId_.add(input.readInt64());
+              events_.add(input.readInt64());
               break;
             }
             case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
-                eventId_ = new java.util.ArrayList<java.lang.Long>();
+                events_ = new java.util.ArrayList<java.lang.Long>();
                 mutable_bitField0_ |= 0x00000008;
               }
               while (input.getBytesUntilLimit() > 0) {
-                eventId_.add(input.readInt64());
+                events_.add(input.readInt64());
               }
               input.popLimit(limit);
               break;
             }
             case 40: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                selectionId_ = new java.util.ArrayList<java.lang.Long>();
+                selections_ = new java.util.ArrayList<java.lang.Long>();
                 mutable_bitField0_ |= 0x00000010;
               }
-              selectionId_.add(input.readInt64());
+              selections_.add(input.readInt64());
               break;
             }
             case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
-                selectionId_ = new java.util.ArrayList<java.lang.Long>();
+                selections_ = new java.util.ArrayList<java.lang.Long>();
                 mutable_bitField0_ |= 0x00000010;
               }
               while (input.getBytesUntilLimit() > 0) {
-                selectionId_.add(input.readInt64());
+                selections_.add(input.readInt64());
               }
               input.popLimit(limit);
               break;
@@ -219,13 +219,13 @@ public final class EventReqProto {
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          services_ = new com.google.protobuf.UnmodifiableLazyStringList(services_);
+          tasks_ = new com.google.protobuf.UnmodifiableLazyStringList(tasks_);
         }
         if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          eventId_ = java.util.Collections.unmodifiableList(eventId_);
+          events_ = java.util.Collections.unmodifiableList(events_);
         }
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-          selectionId_ = java.util.Collections.unmodifiableList(selectionId_);
+          selections_ = java.util.Collections.unmodifiableList(selections_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -318,80 +318,80 @@ public final class EventReqProto {
       }
     }
 
-    // repeated string services = 3;
-    public static final int SERVICES_FIELD_NUMBER = 3;
-    private com.google.protobuf.LazyStringList services_;
+    // repeated string tasks = 3;
+    public static final int TASKS_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList tasks_;
     /**
-     * <code>repeated string services = 3;</code>
+     * <code>repeated string tasks = 3;</code>
      */
     public java.util.List<java.lang.String>
-        getServicesList() {
-      return services_;
+        getTasksList() {
+      return tasks_;
     }
     /**
-     * <code>repeated string services = 3;</code>
+     * <code>repeated string tasks = 3;</code>
      */
-    public int getServicesCount() {
-      return services_.size();
+    public int getTasksCount() {
+      return tasks_.size();
     }
     /**
-     * <code>repeated string services = 3;</code>
+     * <code>repeated string tasks = 3;</code>
      */
-    public java.lang.String getServices(int index) {
-      return services_.get(index);
+    public java.lang.String getTasks(int index) {
+      return tasks_.get(index);
     }
     /**
-     * <code>repeated string services = 3;</code>
+     * <code>repeated string tasks = 3;</code>
      */
     public com.google.protobuf.ByteString
-        getServicesBytes(int index) {
-      return services_.getByteString(index);
+        getTasksBytes(int index) {
+      return tasks_.getByteString(index);
     }
 
-    // repeated int64 event_id = 4;
-    public static final int EVENT_ID_FIELD_NUMBER = 4;
-    private java.util.List<java.lang.Long> eventId_;
+    // repeated int64 events = 4;
+    public static final int EVENTS_FIELD_NUMBER = 4;
+    private java.util.List<java.lang.Long> events_;
     /**
-     * <code>repeated int64 event_id = 4;</code>
+     * <code>repeated int64 events = 4;</code>
      */
     public java.util.List<java.lang.Long>
-        getEventIdList() {
-      return eventId_;
+        getEventsList() {
+      return events_;
     }
     /**
-     * <code>repeated int64 event_id = 4;</code>
+     * <code>repeated int64 events = 4;</code>
      */
-    public int getEventIdCount() {
-      return eventId_.size();
+    public int getEventsCount() {
+      return events_.size();
     }
     /**
-     * <code>repeated int64 event_id = 4;</code>
+     * <code>repeated int64 events = 4;</code>
      */
-    public long getEventId(int index) {
-      return eventId_.get(index);
+    public long getEvents(int index) {
+      return events_.get(index);
     }
 
-    // repeated int64 selection_id = 5;
-    public static final int SELECTION_ID_FIELD_NUMBER = 5;
-    private java.util.List<java.lang.Long> selectionId_;
+    // repeated int64 selections = 5;
+    public static final int SELECTIONS_FIELD_NUMBER = 5;
+    private java.util.List<java.lang.Long> selections_;
     /**
-     * <code>repeated int64 selection_id = 5;</code>
+     * <code>repeated int64 selections = 5;</code>
      */
     public java.util.List<java.lang.Long>
-        getSelectionIdList() {
-      return selectionId_;
+        getSelectionsList() {
+      return selections_;
     }
     /**
-     * <code>repeated int64 selection_id = 5;</code>
+     * <code>repeated int64 selections = 5;</code>
      */
-    public int getSelectionIdCount() {
-      return selectionId_.size();
+    public int getSelectionsCount() {
+      return selections_.size();
     }
     /**
-     * <code>repeated int64 selection_id = 5;</code>
+     * <code>repeated int64 selections = 5;</code>
      */
-    public long getSelectionId(int index) {
-      return selectionId_.get(index);
+    public long getSelections(int index) {
+      return selections_.get(index);
     }
 
     // optional int64 punter_id = 6;
@@ -413,9 +413,9 @@ public final class EventReqProto {
     private void initFields() {
       transactionId_ = 0L;
       localTask_ = "";
-      services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      eventId_ = java.util.Collections.emptyList();
-      selectionId_ = java.util.Collections.emptyList();
+      tasks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      events_ = java.util.Collections.emptyList();
+      selections_ = java.util.Collections.emptyList();
       punterId_ = 0L;
     }
     private byte memoizedIsInitialized = -1;
@@ -444,14 +444,14 @@ public final class EventReqProto {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, getLocalTaskBytes());
       }
-      for (int i = 0; i < services_.size(); i++) {
-        output.writeBytes(3, services_.getByteString(i));
+      for (int i = 0; i < tasks_.size(); i++) {
+        output.writeBytes(3, tasks_.getByteString(i));
       }
-      for (int i = 0; i < eventId_.size(); i++) {
-        output.writeInt64(4, eventId_.get(i));
+      for (int i = 0; i < events_.size(); i++) {
+        output.writeInt64(4, events_.get(i));
       }
-      for (int i = 0; i < selectionId_.size(); i++) {
-        output.writeInt64(5, selectionId_.get(i));
+      for (int i = 0; i < selections_.size(); i++) {
+        output.writeInt64(5, selections_.get(i));
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt64(6, punterId_);
@@ -475,30 +475,30 @@ public final class EventReqProto {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < services_.size(); i++) {
+        for (int i = 0; i < tasks_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(services_.getByteString(i));
+            .computeBytesSizeNoTag(tasks_.getByteString(i));
         }
         size += dataSize;
-        size += 1 * getServicesList().size();
+        size += 1 * getTasksList().size();
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < eventId_.size(); i++) {
+        for (int i = 0; i < events_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeInt64SizeNoTag(eventId_.get(i));
+            .computeInt64SizeNoTag(events_.get(i));
         }
         size += dataSize;
-        size += 1 * getEventIdList().size();
+        size += 1 * getEventsList().size();
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < selectionId_.size(); i++) {
+        for (int i = 0; i < selections_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeInt64SizeNoTag(selectionId_.get(i));
+            .computeInt64SizeNoTag(selections_.get(i));
         }
         size += dataSize;
-        size += 1 * getSelectionIdList().size();
+        size += 1 * getSelectionsList().size();
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
@@ -624,11 +624,11 @@ public final class EventReqProto {
         bitField0_ = (bitField0_ & ~0x00000001);
         localTask_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        tasks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
-        eventId_ = java.util.Collections.emptyList();
+        events_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000008);
-        selectionId_ = java.util.Collections.emptyList();
+        selections_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000010);
         punterId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -669,21 +669,21 @@ public final class EventReqProto {
         }
         result.localTask_ = localTask_;
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          services_ = new com.google.protobuf.UnmodifiableLazyStringList(
-              services_);
+          tasks_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              tasks_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
-        result.services_ = services_;
+        result.tasks_ = tasks_;
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          eventId_ = java.util.Collections.unmodifiableList(eventId_);
+          events_ = java.util.Collections.unmodifiableList(events_);
           bitField0_ = (bitField0_ & ~0x00000008);
         }
-        result.eventId_ = eventId_;
+        result.events_ = events_;
         if (((bitField0_ & 0x00000010) == 0x00000010)) {
-          selectionId_ = java.util.Collections.unmodifiableList(selectionId_);
+          selections_ = java.util.Collections.unmodifiableList(selections_);
           bitField0_ = (bitField0_ & ~0x00000010);
         }
-        result.selectionId_ = selectionId_;
+        result.selections_ = selections_;
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000004;
         }
@@ -712,33 +712,33 @@ public final class EventReqProto {
           localTask_ = other.localTask_;
           onChanged();
         }
-        if (!other.services_.isEmpty()) {
-          if (services_.isEmpty()) {
-            services_ = other.services_;
+        if (!other.tasks_.isEmpty()) {
+          if (tasks_.isEmpty()) {
+            tasks_ = other.tasks_;
             bitField0_ = (bitField0_ & ~0x00000004);
           } else {
-            ensureServicesIsMutable();
-            services_.addAll(other.services_);
+            ensureTasksIsMutable();
+            tasks_.addAll(other.tasks_);
           }
           onChanged();
         }
-        if (!other.eventId_.isEmpty()) {
-          if (eventId_.isEmpty()) {
-            eventId_ = other.eventId_;
+        if (!other.events_.isEmpty()) {
+          if (events_.isEmpty()) {
+            events_ = other.events_;
             bitField0_ = (bitField0_ & ~0x00000008);
           } else {
-            ensureEventIdIsMutable();
-            eventId_.addAll(other.eventId_);
+            ensureEventsIsMutable();
+            events_.addAll(other.events_);
           }
           onChanged();
         }
-        if (!other.selectionId_.isEmpty()) {
-          if (selectionId_.isEmpty()) {
-            selectionId_ = other.selectionId_;
+        if (!other.selections_.isEmpty()) {
+          if (selections_.isEmpty()) {
+            selections_ = other.selections_;
             bitField0_ = (bitField0_ & ~0x00000010);
           } else {
-            ensureSelectionIdIsMutable();
-            selectionId_.addAll(other.selectionId_);
+            ensureSelectionsIsMutable();
+            selections_.addAll(other.selections_);
           }
           onChanged();
         }
@@ -887,226 +887,226 @@ public final class EventReqProto {
         return this;
       }
 
-      // repeated string services = 3;
-      private com.google.protobuf.LazyStringList services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureServicesIsMutable() {
+      // repeated string tasks = 3;
+      private com.google.protobuf.LazyStringList tasks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTasksIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          services_ = new com.google.protobuf.LazyStringArrayList(services_);
+          tasks_ = new com.google.protobuf.LazyStringArrayList(tasks_);
           bitField0_ |= 0x00000004;
          }
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
       public java.util.List<java.lang.String>
-          getServicesList() {
-        return java.util.Collections.unmodifiableList(services_);
+          getTasksList() {
+        return java.util.Collections.unmodifiableList(tasks_);
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
-      public int getServicesCount() {
-        return services_.size();
+      public int getTasksCount() {
+        return tasks_.size();
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
-      public java.lang.String getServices(int index) {
-        return services_.get(index);
+      public java.lang.String getTasks(int index) {
+        return tasks_.get(index);
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
       public com.google.protobuf.ByteString
-          getServicesBytes(int index) {
-        return services_.getByteString(index);
+          getTasksBytes(int index) {
+        return tasks_.getByteString(index);
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
-      public Builder setServices(
+      public Builder setTasks(
           int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureServicesIsMutable();
-        services_.set(index, value);
+  ensureTasksIsMutable();
+        tasks_.set(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
-      public Builder addServices(
+      public Builder addTasks(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureServicesIsMutable();
-        services_.add(value);
+  ensureTasksIsMutable();
+        tasks_.add(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
-      public Builder addAllServices(
+      public Builder addAllTasks(
           java.lang.Iterable<java.lang.String> values) {
-        ensureServicesIsMutable();
-        super.addAll(values, services_);
+        ensureTasksIsMutable();
+        super.addAll(values, tasks_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
-      public Builder clearServices() {
-        services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      public Builder clearTasks() {
+        tasks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string services = 3;</code>
+       * <code>repeated string tasks = 3;</code>
        */
-      public Builder addServicesBytes(
+      public Builder addTasksBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureServicesIsMutable();
-        services_.add(value);
+  ensureTasksIsMutable();
+        tasks_.add(value);
         onChanged();
         return this;
       }
 
-      // repeated int64 event_id = 4;
-      private java.util.List<java.lang.Long> eventId_ = java.util.Collections.emptyList();
-      private void ensureEventIdIsMutable() {
+      // repeated int64 events = 4;
+      private java.util.List<java.lang.Long> events_ = java.util.Collections.emptyList();
+      private void ensureEventsIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          eventId_ = new java.util.ArrayList<java.lang.Long>(eventId_);
+          events_ = new java.util.ArrayList<java.lang.Long>(events_);
           bitField0_ |= 0x00000008;
          }
       }
       /**
-       * <code>repeated int64 event_id = 4;</code>
+       * <code>repeated int64 events = 4;</code>
        */
       public java.util.List<java.lang.Long>
-          getEventIdList() {
-        return java.util.Collections.unmodifiableList(eventId_);
+          getEventsList() {
+        return java.util.Collections.unmodifiableList(events_);
       }
       /**
-       * <code>repeated int64 event_id = 4;</code>
+       * <code>repeated int64 events = 4;</code>
        */
-      public int getEventIdCount() {
-        return eventId_.size();
+      public int getEventsCount() {
+        return events_.size();
       }
       /**
-       * <code>repeated int64 event_id = 4;</code>
+       * <code>repeated int64 events = 4;</code>
        */
-      public long getEventId(int index) {
-        return eventId_.get(index);
+      public long getEvents(int index) {
+        return events_.get(index);
       }
       /**
-       * <code>repeated int64 event_id = 4;</code>
+       * <code>repeated int64 events = 4;</code>
        */
-      public Builder setEventId(
+      public Builder setEvents(
           int index, long value) {
-        ensureEventIdIsMutable();
-        eventId_.set(index, value);
+        ensureEventsIsMutable();
+        events_.set(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated int64 event_id = 4;</code>
+       * <code>repeated int64 events = 4;</code>
        */
-      public Builder addEventId(long value) {
-        ensureEventIdIsMutable();
-        eventId_.add(value);
+      public Builder addEvents(long value) {
+        ensureEventsIsMutable();
+        events_.add(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated int64 event_id = 4;</code>
+       * <code>repeated int64 events = 4;</code>
        */
-      public Builder addAllEventId(
+      public Builder addAllEvents(
           java.lang.Iterable<? extends java.lang.Long> values) {
-        ensureEventIdIsMutable();
-        super.addAll(values, eventId_);
+        ensureEventsIsMutable();
+        super.addAll(values, events_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated int64 event_id = 4;</code>
+       * <code>repeated int64 events = 4;</code>
        */
-      public Builder clearEventId() {
-        eventId_ = java.util.Collections.emptyList();
+      public Builder clearEvents() {
+        events_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
 
-      // repeated int64 selection_id = 5;
-      private java.util.List<java.lang.Long> selectionId_ = java.util.Collections.emptyList();
-      private void ensureSelectionIdIsMutable() {
+      // repeated int64 selections = 5;
+      private java.util.List<java.lang.Long> selections_ = java.util.Collections.emptyList();
+      private void ensureSelectionsIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          selectionId_ = new java.util.ArrayList<java.lang.Long>(selectionId_);
+          selections_ = new java.util.ArrayList<java.lang.Long>(selections_);
           bitField0_ |= 0x00000010;
          }
       }
       /**
-       * <code>repeated int64 selection_id = 5;</code>
+       * <code>repeated int64 selections = 5;</code>
        */
       public java.util.List<java.lang.Long>
-          getSelectionIdList() {
-        return java.util.Collections.unmodifiableList(selectionId_);
+          getSelectionsList() {
+        return java.util.Collections.unmodifiableList(selections_);
       }
       /**
-       * <code>repeated int64 selection_id = 5;</code>
+       * <code>repeated int64 selections = 5;</code>
        */
-      public int getSelectionIdCount() {
-        return selectionId_.size();
+      public int getSelectionsCount() {
+        return selections_.size();
       }
       /**
-       * <code>repeated int64 selection_id = 5;</code>
+       * <code>repeated int64 selections = 5;</code>
        */
-      public long getSelectionId(int index) {
-        return selectionId_.get(index);
+      public long getSelections(int index) {
+        return selections_.get(index);
       }
       /**
-       * <code>repeated int64 selection_id = 5;</code>
+       * <code>repeated int64 selections = 5;</code>
        */
-      public Builder setSelectionId(
+      public Builder setSelections(
           int index, long value) {
-        ensureSelectionIdIsMutable();
-        selectionId_.set(index, value);
+        ensureSelectionsIsMutable();
+        selections_.set(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated int64 selection_id = 5;</code>
+       * <code>repeated int64 selections = 5;</code>
        */
-      public Builder addSelectionId(long value) {
-        ensureSelectionIdIsMutable();
-        selectionId_.add(value);
+      public Builder addSelections(long value) {
+        ensureSelectionsIsMutable();
+        selections_.add(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated int64 selection_id = 5;</code>
+       * <code>repeated int64 selections = 5;</code>
        */
-      public Builder addAllSelectionId(
+      public Builder addAllSelections(
           java.lang.Iterable<? extends java.lang.Long> values) {
-        ensureSelectionIdIsMutable();
-        super.addAll(values, selectionId_);
+        ensureSelectionsIsMutable();
+        super.addAll(values, selections_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated int64 selection_id = 5;</code>
+       * <code>repeated int64 selections = 5;</code>
        */
-      public Builder clearSelectionId() {
-        selectionId_ = java.util.Collections.emptyList();
+      public Builder clearSelections() {
+        selections_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
@@ -1170,11 +1170,11 @@ public final class EventReqProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016EventReq.proto\022\010ru.splat\"\203\001\n\010EventReq\022" +
-      "\026\n\016transaction_id\030\001 \002(\003\022\022\n\nlocal_task\030\002 " +
-      "\002(\t\022\020\n\010services\030\003 \003(\t\022\020\n\010event_id\030\004 \003(\003\022" +
-      "\024\n\014selection_id\030\005 \003(\003\022\021\n\tpunter_id\030\006 \001(\003" +
-      "B\"\n\021ru.splat.protobufB\rEventReqProto"
+      "\n\016EventReq.proto\022\010ru.splat\"|\n\010EventReq\022\026" +
+      "\n\016transaction_id\030\001 \002(\003\022\022\n\nlocal_task\030\002 \002" +
+      "(\t\022\r\n\005tasks\030\003 \003(\t\022\016\n\006events\030\004 \003(\003\022\022\n\nsel" +
+      "ections\030\005 \003(\003\022\021\n\tpunter_id\030\006 \001(\003B\"\n\021ru.s" +
+      "plat.protobufB\rEventReqProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -1186,7 +1186,7 @@ public final class EventReqProto {
           internal_static_ru_splat_EventReq_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ru_splat_EventReq_descriptor,
-              new java.lang.String[] { "TransactionId", "LocalTask", "Services", "EventId", "SelectionId", "PunterId", });
+              new java.lang.String[] { "TransactionId", "LocalTask", "Tasks", "Events", "Selections", "PunterId", });
           return null;
         }
       };

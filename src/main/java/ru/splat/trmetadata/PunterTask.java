@@ -13,6 +13,11 @@ public class PunterTask extends LocalTask {
         this.punterId = _punterId;
     }
 
+    @Override
+    public String getService() {
+        return service;
+    }
+
     public Long getPunterId() {
         return punterId;
 
