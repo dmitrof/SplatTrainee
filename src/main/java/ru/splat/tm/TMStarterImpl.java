@@ -4,6 +4,7 @@ import com.google.protobuf.Descriptors;
 import com.google.protobuf.Message;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.LongDeserializer;
 import org.apache.kafka.common.serialization.LongSerializer;
 import ru.splat.conventions.TaskTypesEnum;
@@ -33,7 +34,7 @@ public class TMStarterImpl implements TMStarter {
         });
         taskList.forEach(task->{
             try {
-                writeToKafka(ProtobufBuilder.buildProtobuf(transactionId, task, taskNames));
+                writeToKafka(task.getService(), transactionId, ProtobufBuilder.buildProtobuf(transactionId, task, taskNames));
             }
             catch (Exception e) {
                 System.out.println(e.getMessage());
@@ -42,9 +43,11 @@ public class TMStarterImpl implements TMStarter {
     }
 
 
-
-    private void writeToKafka(Message message) {
-        //producer.send();
+    private void writeToKafka(String topic, Long transactionId,  Message message) {
+        ProducerRecord<Long, Message> producerRecord = new ProducerRecord<Long, Message>(topic, transactionId, message);
+        //дописать переотправку и батч
+        producer.send(new ProducerRecord<Long, Message>(topic, transactionId, message));
+        producer.flush();
     }
 
     public TMStarterImpl() {
