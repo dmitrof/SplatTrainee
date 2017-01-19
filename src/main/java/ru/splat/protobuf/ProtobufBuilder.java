@@ -1,4 +1,4 @@
-package ru.splat.tm;
+package ru.splat.protobuf;
 
 import com.google.protobuf.Message;
 import ru.splat.protobuf.BetReqProto;

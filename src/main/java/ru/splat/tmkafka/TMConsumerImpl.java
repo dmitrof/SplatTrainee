@@ -20,7 +20,7 @@ public class TMConsumerImpl implements TMConsumer {
 
     public TMConsumerImpl() {
         Properties props = new Properties();
-        props.put("bootstrap.servers", "localhost:9092");
+        props.put("bootstrap.servers", "localhost:2181");
         props.put("group.id", "test");
         //пока что автокоммит, спросить у Романа и Николая зачем вообще "умный" коммит нужен
         props.put("enable.auto.commit", "true");

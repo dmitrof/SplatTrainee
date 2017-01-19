@@ -1,13 +1,9 @@
 package ru.splat.tm;
 
-import com.google.protobuf.Descriptors;
 import com.google.protobuf.Message;
-import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.common.serialization.LongDeserializer;
 import org.apache.kafka.common.serialization.LongSerializer;
-import ru.splat.conventions.TaskTypesEnum;
 import ru.splat.protobuf.*;
 import ru.splat.trmetadata.*;
 

@@ -23,37 +23,39 @@ public class TMFinalizerImpl extends UntypedActor implements TMFinalizer {
         transactionStates = new HashMap<>();
     }
 
-    public void run() {
-
-    }
 
     private  Boolean stateExists(Long transactionId) {
         return transactionStates.containsKey(transactionId);
     }
 
-    public void createTransactionState(TransactionMetadata trMetadata) {
-        Long trId = trMetadata.getTransactionId();
-        System.out.println("Creating state for: " + trId);
-        if (!stateExists(trId)) {
-            Map<TaskTypesEnum, LocalStatesEnum> localStates = new HashMap<>();
-            trMetadata.getLocalTasks().forEach(localTask -> localStates.put(localTask.getType(), LocalStatesEnum.PROCESSING));
-            TransactionState transactionState = new TransactionState(trId, localStates);
+    public void createTransactionState(Long transactionId, Map<TaskTypesEnum, LocalStatesEnum> localStates) {
+        if (!stateExists(transactionId)) {
+            System.out.println("Creating state for: " + transactionId);
+            TransactionState transactionState = new TransactionState(transactionId, localStates);
+            transactionStates.put(transactionId, transactionState);
         }
-        else {
-            System.out.println("State for " + trId + " already exists!");
+        else {//убрать
+            System.out.println("State for " + transactionId + " already exists!");
         }
     }
 
     public void onReceive(Object message) throws Exception {
         if (message instanceof TransactionMetadata) {
-            createTransactionState((TransactionMetadata)message);
+            createTransactionState(((TransactionMetadata) message).getTransactionId(),
+                    getLocalStates((TransactionMetadata)message));
         }
         if (message instanceof Message) {
-            
+            createTransactionState();
         }
         else {
             unhandled(message);
         }
         //if (message instanceof )
+    }
+
+    private Map<TaskTypesEnum, LocalStatesEnum> getLocalStates(TransactionMetadata trMetadata) {
+        Map<TaskTypesEnum, LocalStatesEnum> localStates = new HashMap<>();
+        trMetadata.getLocalTasks().forEach(localTask -> localStates.put(localTask.getType(), LocalStatesEnum.PROCESSING));
+        return localStates;
     }
 }

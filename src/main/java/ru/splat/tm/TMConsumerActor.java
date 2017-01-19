@@ -22,7 +22,6 @@ public class TMConsumerActor extends UntypedActor {
 
 
     public TMConsumerActor(ActorRef tmFinalizer, TMConsumer consumer) {
-
         this.tmFinalizer = tmFinalizer;
         this.consumer = consumer;
     }
@@ -30,11 +29,11 @@ public class TMConsumerActor extends UntypedActor {
     public void onReceive(Object message) throws Throwable {
         if (message.equals("poll")) {
             System.out.println(message.toString());
-            ConsumerRecords<Long, Message> records = consumer.pollRecords();
+            /*ConsumerRecords<Long, Message> records = consumer.pollRecords();
             records.forEach(record-> {
                 tmFinalizer.tell((Object) record.value(), getSelf());
             }
-            );
+            );*/
         }
         else throw new Exception("TMConsumerActor: Unknown message type");
     }
